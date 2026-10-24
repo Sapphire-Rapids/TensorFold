@@ -350,6 +350,10 @@ const Lanes = struct {
         }
         cache.untaught = stream.untaught;
         while (at < ids.len) {
+            if (stream.isCancelled()) {
+                stream.keepInterruptedPrefill(@intCast(at));
+                return error.Cancelled;
+            }
             const end = nextCut(ids.len, stream.chunks, at);
             try self.e.forward(&.{.{ .cache = cache, .rows = end - at, .images = if (images) |*im| im else null }}, ids[at..end], .last);
             at = end;
