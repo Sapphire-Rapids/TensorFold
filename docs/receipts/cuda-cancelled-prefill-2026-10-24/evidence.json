@@ -1,0 +1,217 @@
+{
+  "date": "2026-10-24",
+  "base_commit": "3f2ceb85b8cf9534bc05380f0f791682ece2e536",
+  "validated_candidate_commit": "6ad99c5fc8ab7cfdff8f2eee8c06d6f9d37ecb22",
+  "binary_sha256": {
+    "base": "b2e56ae40433506f0c01351ff48d21c2f510cda111d62cb385a216d7056b1244",
+    "candidate": "ee253dc9533999e182b831ac9008140c8feca6d954db5dc2b0680b152681afd6"
+  },
+  "environment": {
+    "os": "Ubuntu 24.04.5 LTS",
+    "arch": "aarch64",
+    "kernel": "6.17.0-1032-nvidia",
+    "gpu_driver": "NVIDIA GB10, 580.173.02",
+    "mem_total_kib": 127600752,
+    "runtime_image_id": "sha256:ea0cee45de324208e3dd801d78aa8bc7a46946100efecf464bb034731399baa9",
+    "cuda_image_environment": [
+      "CUDA_VERSION=13.3.1.008",
+      "NCCL_VERSION=2.30.7"
+    ],
+    "nvcc": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2026 NVIDIA Corporation\nBuilt on Tue_Jun_09_02:45:27_PM_PDT_2026\nCuda compilation tools, release 13.3, V13.3.73\nBuild cuda_13.3.r13.3/compiler.38244171_0\n",
+    "torch_package": "2.13.0a0+9186a08b2c.nv26.7.59513937",
+    "checkpoint_metadata": {
+      "architectures": [
+        "Qwen3_5ForConditionalGeneration"
+      ],
+      "model_type": "qwen3_5",
+      "quantization": {
+        "group_size": 64,
+        "bits": 4,
+        "mode": "affine"
+      },
+      "quantization_config": {
+        "group_size": 64,
+        "bits": 4,
+        "mode": "affine"
+      },
+      "text": {
+        "model_type": "qwen3_5_text",
+        "dtype": "bfloat16",
+        "max_position_embeddings": 262144
+      }
+    }
+  },
+  "zig_version": "0.17.0",
+  "native_build_command": "zig build native -Dnvcc=/usr/local/cuda/bin/nvcc -Dsm=121 -Doptimize=ReleaseFast -j2 --prefix <output> --summary all",
+  "native_build_reported_mode": "safe native",
+  "model": "mlx-community/Qwen3.5-2B-MLX-4bit",
+  "model_revision": "93760be4f1f69842a46bc13dbdc0f19e291392a3",
+  "runtime": "native Zig/CUDA; MLX and PyTorch are not inference dependencies",
+  "rank_count": 1,
+  "context": 131072,
+  "parallel": 2,
+  "cache_gib": {
+    "off": 0,
+    "cancellation": 2
+  },
+  "request_sha256": "bb1fc4e5cdc59545968470d9cfa2d6df7d364670004e91a2cbc262102474dc30",
+  "prompt_tokens": 104559,
+  "request_settings": {
+    "model": "cuda-resume-check",
+    "temperature": 0,
+    "seed": 1234,
+    "max_tokens": 32,
+    "ignore_eos": true,
+    "stream": true,
+    "stream_options": {
+      "include_usage": true
+    },
+    "chat_template_kwargs": {
+      "enable_thinking": false
+    }
+  },
+  "source_sha256": {
+    "zig/glm_snapshot_host.zig": "6edea809d5b60197aa3bdf6c7b02f015d6ca6e3da22c1e8909375cb2aee32066",
+    "zig/src/core/lane_host_end.zig": "517a77db091b74003bb8d894a462167ab1ecbf414235780cd75b41668e3de8cf",
+    "zig/src/core/lane_host_interrupted_test.zig": "0badb23150dee07d367bbd0ce5af559dfce665fc72db03bfa59fc0d41130084e",
+    "zig/src/core/lanes/backend.zig": "c0cf7c445781cc7ced15b507ac8a87f4f93f794dadc74d84fd1ef7175baf87e1",
+    "zig/src/core/lanes/recorder.zig": "0766f1ffcb3b993aefdabdabcf380bd5af77df14ea1e3d64e609cf84b8f69baa",
+    "zig/src/core/lanes/recorder_test.zig": "be2cd906eb4137412dc55ef13cc15c7816c4910ab9aca924e485b4150d34488e",
+    "zig/src/core/lanes/stream.zig": "37ee7d4d5ac5ceb6f5c32d8f5291c35f135233b2d0b418e5769f277226ed49af",
+    "zig/src/families/flashnext/cuda_lanes.zig": "163d1ff7ccd41ab72a6f375c010e9773cd270a281ff5000a240ae5ec645e8326",
+    "zig/src/families/glm/cuda_engine.zig": "e0f1beac51e2284bef3cc873281b51cc090692fb09890ffda024072a6a6ad9b3",
+    "zig/src/families/glm/cuda_engine_types.zig": "7bf5991abd10a56c1e7b316ccf3dc662ec06ee9edf5523bf3bb8de598c6d6618",
+    "zig/src/families/glm/cuda_lanes.zig": "87e0af08da2489cb64e4a2000d3171f1219f66ffbfe5c4a5197644eeb146c684",
+    "zig/src/families/glm/cuda_snapshots.zig": "1e4e341153d7949f84f930fe4097ff03cde648ef8843899573d40a606dcb64e2",
+    "zig/src/families/kolibri1/backend.zig": "cb02d7ed95571e3a2b1e6557d80b63128aab00b5c756f2d2abe3845f340813fd",
+    "zig/src/families/nemotron/cuda_lanes.zig": "8099a41f11822c9517ba2856302e9d380bcc7896323133f363181a49e4d7b7c2",
+    "zig/src/families/qwen3_5/cuda_native.zig": "3b92cc444855ddf987f33fa3232d47332130fd39e03afb4f1f6d85fefd464bc6",
+    "zig/src/native/cuda_bound.zig": "71e2c68c51df5b526982803dc4ef65869b3611b4f66c044d9e5274e95e0f287c"
+  },
+  "host_checks": {
+    "host_steps_passed": 321,
+    "host_steps_total": 321,
+    "host_tests_passed": 3518,
+    "host_tests_total": 3532,
+    "host_tests_skipped": 14,
+    "plain_build_steps_passed": 150,
+    "plain_build_steps_total": 150
+  },
+  "cold_single_measurements": [
+    {
+      "case": "cold-2048",
+      "baseline_ttft_s": 0.2880822280421853,
+      "candidate_ttft_s": 0.2910205195657909,
+      "change_percent": 1.019948902635992,
+      "exact_token_match": true
+    },
+    {
+      "case": "cold-8192",
+      "baseline_ttft_s": 1.462565189693123,
+      "candidate_ttft_s": 1.5028132540173829,
+      "change_percent": 2.751881735453088,
+      "exact_token_match": true
+    },
+    {
+      "case": "cold-32768",
+      "baseline_ttft_s": 12.067396265920252,
+      "candidate_ttft_s": 12.284770409576595,
+      "change_percent": 1.8013342635497365,
+      "exact_token_match": true
+    },
+    {
+      "case": "cold-65536",
+      "baseline_ttft_s": 45.369386421050876,
+      "candidate_ttft_s": 44.80225846963003,
+      "change_percent": -1.2500234104063201,
+      "exact_token_match": true
+    },
+    {
+      "case": "fresh-long",
+      "baseline_ttft_s": 125.59403327805921,
+      "candidate_ttft_s": 123.68564316537231,
+      "change_percent": -1.519491064087275,
+      "exact_token_match": true
+    }
+  ],
+  "negative_controls": {
+    "keep_interrupted_prefill_disabled": {
+      "exit_code": 1,
+      "failed": 2
+    },
+    "glm_rank_publication_disabled": {
+      "exit_code": 1,
+      "failed": 1
+    },
+    "wrapper_forwarding_removed": {
+      "exit_code": 1,
+      "failed": 3
+    }
+  },
+  "lean": {
+    "base": 438,
+    "candidate": 438,
+    "new": 0
+  },
+  "limitations": [
+    "One GB10 and one Qwen checkpoint; other changed adapters have host coverage only.",
+    "Default-vs-draft:false tokens were compared; positive speculative-work telemetry was not captured.",
+    "Single non-alternating timing observation per cell; no last-release or standard-server comparison.",
+    "No peak serving-memory measurement, 128K/native-window run or Metal M1-M5 device run."
+  ],
+  "log_redactions": [
+    {
+      "file": "linux-host-gates.log.gz",
+      "substitutions": {}
+    },
+    {
+      "file": "linux-plain-build.log.gz",
+      "substitutions": {}
+    },
+    {
+      "file": "native-linux-build.log.gz",
+      "substitutions": {}
+    },
+    {
+      "file": "negative-control.log.gz",
+      "substitutions": {
+        "<source>": 4,
+        "<zig-0.17.0>": 4
+      }
+    },
+    {
+      "file": "negative-rank-gate.log.gz",
+      "substitutions": {
+        "<source>": 1,
+        "<zig-0.17.0>": 1
+      }
+    },
+    {
+      "file": "rank-gate-restored.log.gz",
+      "substitutions": {}
+    },
+    {
+      "file": "wrapper-negative.log.gz",
+      "substitutions": {
+        "<source>": 3,
+        "<zig-0.17.0>": 5
+      }
+    },
+    {
+      "file": "wrapper-positive.log.gz",
+      "substitutions": {}
+    },
+    {
+      "file": "lean-base.txt.gz",
+      "substitutions": {}
+    },
+    {
+      "file": "lean-reviewed-head.txt.gz",
+      "substitutions": {}
+    },
+    {
+      "file": "lean-reviewed-new.txt.gz",
+      "substitutions": {}
+    }
+  ]
+}
